@@ -1,0 +1,301 @@
+.rootLayout {
+    padding: 16px 64px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #0c1016, #121a24);
+    position: relative;
+    overflow: hidden;
+
+    /* Subtle animated background gradient */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+            radial-gradient(circle at 20% 30%, rgba(0, 103, 71, 0.05) 0%, transparent 20%),
+            radial-gradient(circle at 80% 40%, rgba(207, 171, 0, 0.05) 0%, transparent 20%);
+        animation: backgroundShift 25s infinite alternate;
+        z-index: 0;
+    }
+
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+        position: relative;
+        z-index: 1;
+        border-bottom: 1px solid rgba(0, 103, 71, 0.2);
+        animation: slideDown 0.6s ease-out;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 30%;
+            height: 2px;
+            background: linear-gradient(90deg, #00964E, #CFA700);
+            box-shadow: 0 0 10px rgba(0, 150, 78, 0.5);
+            animation: gradientFlow 8s linear infinite;
+        }
+
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -12px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 3px;
+                height: 0;
+                background: #CFA700;
+                animation: growHeight 0.6s 0.5s ease-out forwards;
+            }
+
+            img{
+                width: 50px;
+                height: 50px;
+                filter: drop-shadow(0 0 5px rgba(0, 150, 78, 0.5));
+                animation: pulseGlow 3s infinite alternate;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover img {
+                transform: scale(1.1);
+            }
+            
+            /* Enhanced TORALK title styling */
+            span {
+                font-family: 'Cinzel Decorative', 'Tangerine', serif;
+                font-weight: 700;
+                font-size: 36px;
+                letter-spacing: 10px;
+                color: transparent;
+                background: linear-gradient(135deg, #ffda65, #cfa700, #ffda65);
+                background-clip: text;
+                -webkit-background-clip: text;
+                position: relative;
+                transform-style: preserve-3d;
+                transform: perspective(500px) rotateX(5deg);
+                
+                /* 3D and shadow effect */
+                text-shadow: 
+                    0 1px 0 #b39000,
+                    0 2px 0 #a08000,
+                    0 3px 0 #8c7000,
+                    0 4px 0 #786000,
+                    0 5px 0 #645000,
+                    0 6px 0 #504000,
+                    0 7px 10px rgba(0, 0, 0, 0.7);
+                
+                /* Glow effect */
+                filter: drop-shadow(0 0 5px rgba(207, 167, 0, 0.5));
+                animation: titleGlow 3s infinite alternate, titleSway 6s ease-in-out infinite;
+                
+                /* Sparkle effects using pseudo-elements */
+                &::before, &::after {
+                    content: '';
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    background-color: white;
+                    border-radius: 50%;
+                    opacity: 0;
+                    filter: blur(1px);
+                    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+                }
+                
+                &::before {
+                    top: 5px;
+                    left: 15px;
+                    animation: sparkle 4s infinite 0.5s;
+                }
+                
+                &::after {
+                    bottom: 8px;
+                    right: 10px;
+                    animation: sparkle 4s infinite 1.5s;
+                }
+            }
+            
+            /* Additional sparkles */
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-image: 
+                    radial-gradient(circle at 20% 30%, white 0%, transparent 1%),
+                    radial-gradient(circle at 70% 20%, white 0%, transparent 1%),
+                    radial-gradient(circle at 40% 70%, white 0%, transparent 1%),
+                    radial-gradient(circle at 90% 60%, white 0%, transparent 1%);
+                animation: sparkleBackground 6s infinite;
+                pointer-events: none;
+            }
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            
+            a {
+                position: relative;
+                color: #f8f8f8;
+                text-decoration: none;
+                padding: 5px 0;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                animation: fadeSlideIn 0.5s ease backwards;
+                
+                &:nth-child(1) { animation-delay: 0.1s; }
+                &:nth-child(2) { animation-delay: 0.2s; }
+                &:nth-child(3) { animation-delay: 0.3s; }
+                &:nth-child(4) { animation-delay: 0.4s; }
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: #CFA700;
+                    transition: width 0.3s ease;
+                }
+                
+                &:hover {
+                    color: #CFA700;
+                    
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    main{
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        animation: fadeIn 0.8s ease-out;
+        padding-top: 20px;
+    }
+
+    /* Animated accent elements */
+    .accent-circle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.05;
+        z-index: 0;
+        animation: float 20s infinite alternate;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 20%;
+        right: -150px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(0, 103, 71, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        animation: floatSlow 25s infinite alternate;
+        z-index: 0;
+    }
+}
+
+/* Animation keyframes */
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes growHeight {
+    from { height: 0; }
+    to { height: 70%; }
+}
+
+@keyframes pulseGlow {
+    0% { filter: drop-shadow(0 0 3px rgba(0, 150, 78, 0.3)); }
+    50% { filter: drop-shadow(0 0 8px rgba(0, 150, 78, 0.7)); }
+    100% { filter: drop-shadow(0 0 3px rgba(0, 150, 78, 0.3)); }
+}
+
+@keyframes floatSlow {
+    0% { transform: translateY(0) translateX(0); opacity: 0.05; }
+    50% { transform: translateY(40px) translateX(20px); opacity: 0.08; }
+    100% { transform: translateY(20px) translateX(-30px); opacity: 0.05; }
+}
+
+@keyframes backgroundShift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* New animations for the enhanced TORALK title */
+@keyframes titleGlow {
+    0% { filter: drop-shadow(0 0 5px rgba(207, 167, 0, 0.5)); }
+    50% { filter: drop-shadow(0 0 15px rgba(207, 167, 0, 0.8)); }
+    100% { filter: drop-shadow(0 0 5px rgba(207, 167, 0, 0.5)); }
+}
+
+@keyframes titleSway {
+    0% { transform: perspective(500px) rotateX(5deg) rotateY(-1deg); }
+    50% { transform: perspective(500px) rotateX(5deg) rotateY(1deg); }
+    100% { transform: perspective(500px) rotateX(5deg) rotateY(-1deg); }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+@keyframes sparkleBackground {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 0; }
+    20%, 40%, 60%, 80% { opacity: 0.8; }
+    30%, 50%, 70% { opacity: 0.3; }
+}
+
+/* USF color variables that can be used throughout the app */
+:root {
+    --usf-green: #00964E;
+    --usf-green-dark: #006747;
+    --usf-gold: #CFA700;
+    --usf-gold-light: #FDDA24;
+}
