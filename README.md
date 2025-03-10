@@ -94,7 +94,7 @@ We welcome contributions! Follow these steps:
 
 ## 📞 Contact  
 For any issues or inquiries, reach out via email:  
-📧 [your-email@example.com](mailto:your-email@example.com)  
+📧 2006tuankhang@gmail.com
 
 ---
 
