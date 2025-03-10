@@ -20,6 +20,7 @@ AI Chatbot is a web-based chat application powered by artificial intelligence. I
 ---
 
 ## 📸 Interface Preview  
+![Interface](https://github.com/user-attachments/assets/f8bb63f2-fca6-4191-9adb-9e3811e57b0e)
 
 ### 🔹 Sign In Page  
 ![Sign In](https://github.com/user-attachments/assets/017a3736-1047-4044-8c90-7a3bef9427d5)  
