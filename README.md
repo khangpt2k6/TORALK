@@ -1,4 +1,4 @@
-# 🧠 AI Chatbot - Web Application  
+# 🧠 AI Chatbot - Web Application (In progress - Have not finished, is limited to many features) 
 
 ## 🚀 Overview  
 AI Chatbot is a web-based chat application powered by artificial intelligence. It allows users to have real-time conversations, upload images, and manage their chat history. Built with the **MERN Stack (MongoDB, Express, React, Node.js) & Vite**, the chatbot ensures a fast and smooth user experience.  
